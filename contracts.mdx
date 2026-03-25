@@ -1,0 +1,44 @@
+---
+title: Smart contracts
+description: Deployed contract addresses and verification status.
+---
+
+# Smart contracts
+
+## Deployed contracts (Sepolia testnet)
+
+| Contract | Address | Purpose |
+|----------|---------|---------|
+| BlankFXAccess | `0xf40e9785504a0d9ae7efeaaf0cdf318838bda5aa` | Access control and user permissions |
+| BlankFXUSDHub | `0xde80314fff3ecfe850f9102cc5527939ba06e49c` | USD liquidity pool (USDC, USDT, RLUSD) |
+| BlankFXFXPool (EUR) | `0x2040e7b2b19d1636da9007dda14e2a5a0d020d46` | EUR liquidity pool (EURC) |
+| BlankFXRouterV3 | `0x5894a106b96119274ba258d0a5b1f4a84e293afb` | Swap router — routes trades through hub and pools |
+
+## Architecture
+
+```
+User Wallet
+    │
+    ▼
+BlankFXRouterV3 (swap entry point)
+    │
+    ├── BlankFXUSDHub (USD stablecoin pool)
+    │
+    └── BlankFXFXPool (foreign currency pools, e.g. EUR)
+    
+BlankFXAccess (permission checks on every trade)
+```
+
+All swaps go through the Router. The Router checks access permissions, then routes the trade to the appropriate pool(s) based on the token pair.
+
+## Access control
+
+BlankFX uses a tiered access system. Users must be registered to trade. Access tiers determine maximum trade sizes and available features.
+
+## Audit status
+
+Contracts have not yet been formally audited. A third-party audit is planned before mainnet deployment.
+
+<Warning>
+BlankFX is currently deployed on Sepolia testnet only. Do not send real funds to these addresses.
+</Warning>

@@ -1,0 +1,47 @@
+# BlankFX
+
+> On-chain FX infrastructure with oracle-anchored pricing and instant settlement.
+
+BlankFX is a decentralized foreign exchange protocol on Ethereum. It enables stablecoin swaps (USDC, USDT, RLUSD, EURC) at oracle-anchored rates with gasless execution.
+
+## Key concepts
+
+- Oracle-anchored pricing: Swap rates are derived from on-chain oracle feeds, not AMM pool ratios. This gives tighter spreads and eliminates MEV.
+- Gasless swaps: Users sign an EIP-712 message. A relay service submits the transaction and pays gas. Gas cost is embedded in the swap spread.
+- Single-sided liquidity: Deposit one stablecoin (e.g. just USDC) to earn yield. No token pairing required.
+- USD Hub model: All USD stablecoins share one pool. Cross-currency swaps route through the hub via oracle rates.
+
+## Architecture
+
+- BlankFXRouterV3: Entry point for all swaps. Routes to the correct pool based on token pair.
+- BlankFXUSDHub: Holds USD stablecoin liquidity (USDC, USDT, RLUSD).
+- BlankFXFXPool: Foreign currency pools (e.g. EUR). Each currency gets its own pool.
+- BlankFXAccess: Tiered permission system. Users must be registered to trade.
+
+## Swap types
+
+- USD-USD: Direct swap within the USD Hub (e.g. USDC to USDT). Near 1:1 rate.
+- Cross-currency: Routes through USD Hub and foreign pool via oracle rate (e.g. USDC to EURC).
+- Intra-pool: Swap between tokens in the same foreign pool.
+
+## Earning yield
+
+Deposit stablecoins into a pool to receive receipt tokens (e.g. BFX-USD). Trading fees accrue to the pool, increasing the exchange rate between receipt tokens and the underlying stablecoin. No claiming required.
+
+## Current status
+
+Live on Ethereum Sepolia (testnet). Mainnet and Base deployments planned.
+
+## Machine-readable reference
+
+- Token list: /reference/tokens.json
+- Contract addresses: /reference/contracts.json
+
+## Documentation
+
+- Getting started: /getting-started
+- Swaps: /swaps
+- Earn: /earn
+- Fees: /fees
+- Contracts: /contracts
+- FAQ: /faq

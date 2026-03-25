@@ -1,0 +1,22 @@
+{
+  "network": "ethereum-sepolia",
+  "chainId": 11155111,
+  "contracts": {
+    "BlankFXAccess": {
+      "address": "0xf40e9785504a0d9ae7efeaaf0cdf318838bda5aa",
+      "purpose": "Access control and user permissions"
+    },
+    "BlankFXUSDHub": {
+      "address": "0xde80314fff3ecfe850f9102cc5527939ba06e49c",
+      "purpose": "USD liquidity pool (USDC, USDT, RLUSD)"
+    },
+    "BlankFXFXPool_EUR": {
+      "address": "0x2040e7b2b19d1636da9007dda14e2a5a0d020d46",
+      "purpose": "EUR liquidity pool (EURC)"
+    },
+    "BlankFXRouterV3": {
+      "address": "0x5894a106b96119274ba258d0a5b1f4a84e293afb",
+      "purpose": "Swap router"
+    }
+  }
+}

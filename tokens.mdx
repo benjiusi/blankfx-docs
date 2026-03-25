@@ -1,0 +1,31 @@
+---
+title: Supported tokens
+description: Stablecoins supported on BlankFX with contract addresses and decimals.
+---
+
+# Supported tokens
+
+## Live tokens (Sepolia testnet)
+
+| Token | Symbol | Decimals | Currency | Address |
+|-------|--------|----------|----------|---------|
+| USD Coin | USDC | 6 | USD | `0x40a90e4d5964dc1b81fd221171ad5748043c3dcd` |
+| Tether USD | USDT | 6 | USD | `0x52a51a6a035ec3d37af8bb90d881f7db675e0c20` |
+| Ripple USD | RLUSD | 6 | USD | `0x7b16bb2fce7f1345a389cf9d7d607e2a47c0750e` |
+| EUR Coin | EURC | 6 | EUR | `0xf42f4df658df75dd84db1b3a1af6c721112d3416` |
+
+## Planned tokens
+
+| Token | Symbol | Currency | Status |
+|-------|--------|----------|--------|
+| Swiss Franc (Aura) | CHFAU | CHF | Coming soon |
+| British Pound Token | GBPT | GBP | Coming soon |
+
+## How tokens are grouped
+
+Tokens are organized by currency into pools:
+
+- **USD Pool** accepts USDC, USDT, and RLUSD. Swaps between these tokens happen at near 1:1 rates.
+- **EUR Pool** accepts EURC. Cross-currency swaps (e.g. USDC → EURC) use the oracle FX rate.
+
+Each new currency added to BlankFX gets its own pool. This keeps pricing clean and prevents cross-currency impermanent loss.

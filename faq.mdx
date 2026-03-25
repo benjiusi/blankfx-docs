@@ -1,0 +1,62 @@
+---
+title: FAQ
+description: Frequently asked questions about BlankFX.
+---
+
+# FAQ
+
+## General
+
+<AccordionGroup>
+  <Accordion title="What is BlankFX?">
+    BlankFX is an on-chain FX protocol that lets you swap between stablecoins at oracle-anchored rates. It's designed for corporates, payment platforms, and stablecoin holders who want reliable FX execution with instant settlement.
+  </Accordion>
+
+  <Accordion title="How is BlankFX different from Uniswap?">
+    Uniswap derives swap prices from pool ratios (constant product AMM). BlankFX uses oracle feeds for FX pricing, which means tighter spreads on currency pairs, less price impact on large trades, and no MEV extraction. BlankFX is purpose-built for FX, not general-purpose token swaps.
+  </Accordion>
+
+  <Accordion title="Which networks are supported?">
+    BlankFX is currently live on Ethereum Sepolia (testnet). Ethereum mainnet and Base deployments are planned.
+  </Accordion>
+
+  <Accordion title="Do I need ETH for gas?">
+    No. BlankFX supports gasless swaps by default. You sign a message (free) and the protocol submits the transaction. The gas cost is included in the swap spread. The only exception is the first-time token approval, which requires a small amount of ETH.
+  </Accordion>
+</AccordionGroup>
+
+## Earning yield
+
+<AccordionGroup>
+  <Accordion title="Where does the yield come from?">
+    Yield comes from trading fees. Every FX swap on BlankFX generates a spread fee, and 100% of that fee goes to liquidity providers. There are no token emissions or inflationary rewards — yield is real revenue from real trades.
+  </Accordion>
+
+  <Accordion title="Is my deposit locked?">
+    No. You can withdraw at any time after a 5-minute cooldown following your deposit. There are no lock-up periods or withdrawal penalties.
+  </Accordion>
+
+  <Accordion title="Do I need to claim rewards?">
+    No. Yield accrues automatically in your pool position. The exchange rate between your receipt tokens and the underlying stablecoin increases over time. When you withdraw, you get back more than you deposited.
+  </Accordion>
+
+  <Accordion title="Can I lose money as a liquidity provider?">
+    The main risks are smart contract bugs, oracle malfunctions, and extreme market conditions. Unlike standard AMMs, BlankFX uses oracle-anchored pricing, which eliminates traditional impermanent loss. However, no DeFi protocol is risk-free. Only deposit what you can afford to lose.
+  </Accordion>
+</AccordionGroup>
+
+## Security
+
+<AccordionGroup>
+  <Accordion title="Are the smart contracts audited?">
+    A formal audit is planned before mainnet deployment. The contracts are currently deployed on Sepolia testnet for testing and feedback.
+  </Accordion>
+
+  <Accordion title="What happens if I lose access to my wallet?">
+    BlankFX is non-custodial. The protocol never holds your private keys. If you lose wallet access, you'll need to recover it through your wallet provider's recovery process. BlankFX cannot recover funds or reset access.
+  </Accordion>
+
+  <Accordion title="Is there a bug bounty?">
+    A bug bounty program is planned for mainnet launch. Details will be published when available.
+  </Accordion>
+</AccordionGroup>
