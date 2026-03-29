@@ -56,14 +56,14 @@
   "navbar": {
     "links": [
       {
-        "label": "App",
+        "label": "Marketing",
         "href": "https://blankfx.org"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Launch App",
-      "href": "https://blankfx.org"
+      "href": "https://app.blankfx.org"
     }
   },
   "footer": {

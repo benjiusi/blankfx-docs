@@ -12,9 +12,9 @@ BlankFX charges a spread on each swap. The spread is the difference between the 
 | Swap type | Typical spread |
 |-----------|---------------|
 | USD ↔ USD (e.g. USDC to USDT) | ~0.05% |
-| Cross-currency (e.g. USDC to EURC) | ~0.10-0.30% |
+| Cross-currency (e.g. USDC to EURC) | ~0.10–0.30% |
 
-Spreads are set by the protocol and may vary by pair and market conditions.
+The fee is shown in the interface as `0.05% · $X.XX` on the quote step, before you confirm. Spreads are set by protocol parameters and may vary by pair and market conditions.
 
 ## Where fees go
 
@@ -31,6 +31,10 @@ This means USD Pool depositors earn from every trade on the protocol, regardless
 If you use gasless mode (default), you don't pay gas directly. The gas cost is included in the swap spread — you see one rate that covers everything.
 
 If you submit transactions directly (advanced), you pay standard Ethereum gas fees.
+
+## Gasless relay fee
+
+When using the gasless relay via Permit2 + BlankFXRelayRouter, there is no additional relay fee charged on top of the swap spread. The gas cost is absorbed into the standard spread.
 
 ## Deposit and withdrawal fees
 
