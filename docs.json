@@ -3,9 +3,17 @@
   "theme": "mint",
   "name": "BlankFX Docs",
   "colors": {
-    "primary": "#3B82F6",
-    "light": "#60A5FA",
-    "dark": "#2563EB"
+    "primary": "#4B9EFF",
+    "light": "#4B9EFF",
+    "dark": "#2f7ddd"
+  },
+  "font": {
+    "headings": {
+      "family": "DM Sans"
+    },
+    "body": {
+      "family": "DM Sans"
+    }
   },
   "favicon": "/favicon.png",
   "logo": {
