@@ -15,10 +15,10 @@
       "family": "DM Sans"
     }
   },
-  "favicon": "/favicon.png",
+  "favicon": "https://cdn.jsdelivr.net/gh/benjiusi/blankfx-docs@main/favicon.png",
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "https://cdn.jsdelivr.net/gh/benjiusi/blankfx-docs@main/logo/light.png",
+    "dark": "https://cdn.jsdelivr.net/gh/benjiusi/blankfx-docs@main/logo/dark.png"
   },
   "navigation": {
     "tabs": [
