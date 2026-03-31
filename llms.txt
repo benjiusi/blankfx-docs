@@ -45,3 +45,4 @@ Live on Ethereum Sepolia (testnet). Mainnet and Base deployments planned.
 - Fees: /fees
 - Contracts: /contracts
 - FAQ: /faq
+- Compliance & KYC: /compliance
