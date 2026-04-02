@@ -1,0 +1,39 @@
+# Supported tokens
+
+## Live tokens (Sepolia testnet)
+
+| Token | Symbol | Decimals | Currency | Address |
+|-------|--------|----------|----------|---------|
+| USD Coin | USDC | 6 | USD | `0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238` |
+| Tether USD | USDT | 6 | USD | `0xaA8E23Fb1079EA71e0a56F48a2aA51851D8433D0` |
+| EUR Coin | EURC | 6 | EUR | `0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4` |
+| Permit2 | — | — | — | `0x000000000022D473030F116dDEE9F6B43aC78BA3` |
+
+> RLUSD is supported in the protocol but not currently available on Sepolia faucets. It will be included in the Mainnet token set.
+
+## Planned tokens
+
+| Token | Symbol | Currency | Status |
+|-------|--------|----------|--------|
+| Swiss Franc (Aura) | CHFAU | CHF | Coming soon |
+| British Pound Token | GBPT | GBP | Coming soon |
+
+## How tokens are grouped
+
+Tokens are organized by currency into pools:
+
+- **USD Pool** accepts USDC and USDT (RLUSD on mainnet). Swaps between these tokens happen at near 1:1 rates.
+- **EUR Pool** accepts EURC. Cross-currency swaps (e.g. USDC → EURC) use the oracle FX rate.
+
+Each new currency added to BlankFX gets its own pool. This keeps pricing clean and prevents cross-currency impermanent loss.
+
+## Receipt tokens (LP positions)
+
+When you deposit into a pool, you receive a receipt token representing your share:
+
+| Pool | Receipt Token | Description |
+|------|--------------|-------------|
+| USD Pool | `bUSDx` | LP receipt for the USD liquidity pool |
+| EUR Pool | `bEURx` | LP receipt for the EUR liquidity pool |
+
+Receipt tokens accrue value as trading fees accumulate in the pool. When you withdraw, you redeem your `bUSDx` or `bEURx` for the underlying stablecoins at the current exchange rate — which will be higher than when you deposited, reflecting earned yield.

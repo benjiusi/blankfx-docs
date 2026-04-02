@@ -1,0 +1,42 @@
+# Smart contracts
+
+## Deployed contracts (Sepolia testnet)
+
+| Contract | Address | Purpose |
+|----------|---------|---------|
+| BlankFXAccess | `0xc3e9A233861a5f5E606aF61fEa5907a0776aA411` | Access control and user permissions |
+| BlankFXUSDHub | `0xC081279f1B241f2530bde7bF46430A4e108C4FfF` | USD liquidity pool (USDC, USDT, RLUSD) |
+| BlankFXFXPool (EUR) | `0xd73C964F0cEb9eA46973292383306c21bd53B23C` | EUR liquidity pool (EURC) |
+| BlankFXRouterV3 | `0x171bB65D294ae2F9fC10e77A6AC35141baDd4bD9` | Swap router — routes trades through hub and pools |
+| BlankFXRelayRouter (Gasless) | `0x0C092B9D0D4E34FCd64e518AE8F58ccfC9fD4Ed4` | Gasless relay router via Permit2 |
+| Permit2 | `0x000000000022D473030F116dDEE9F6B43aC78BA3` | Uniswap Permit2 — used for gasless approvals |
+
+> ⚠️ All contracts are deployed on **Sepolia testnet** only. Do not send real funds to these addresses. Mainnet deployment is pending audit completion.
+
+## Architecture
+
+```
+User Wallet
+    │
+    ▼
+BlankFXRouterV3 (swap entry point)
+    │           BlankFXRelayRouter (gasless path via Permit2)
+    │
+    ├── BlankFXUSDHub (USD stablecoin pool)
+    │
+    └── BlankFXFXPool (foreign currency pools, e.g. EUR)
+    
+BlankFXAccess (permission checks on every trade)
+```
+
+All swaps go through the Router. The Router checks access permissions, then routes the trade to the appropriate pool(s) based on the token pair.
+
+For gasless swaps, users sign an off-chain Permit2 message and the BlankFXRelayRouter submits the transaction on their behalf.
+
+## Access control
+
+BlankFX uses a tiered access system. Users must be registered to trade. Access tiers determine maximum trade sizes and available features.
+
+## Audit status
+
+Contracts have not yet been formally audited. A third-party audit is planned before mainnet deployment.
