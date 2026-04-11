@@ -14,7 +14,7 @@
 
 ## Reference
 
-* [Smart contracts](contracts.md)
+* [Contracts](contracts.md)
 * [Supported tokens](tokens.md)
 * [FAQ](faq.md)
 

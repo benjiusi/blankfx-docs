@@ -1,15 +1,15 @@
 # BlankFX
 
-> On-chain FX infrastructure with oracle-anchored pricing and instant settlement.
+> Stablecoin FX infrastructure for businesses that need fast settlement, tight pricing, and a clean audit trail.
 
-BlankFX is a decentralized foreign exchange protocol on Ethereum. It enables stablecoin swaps (USDC, USDT, RLUSD, EURC) at oracle-anchored rates with gasless execution.
+BlankFX is a stablecoin FX layer for business flows. It combines routing, pricing, compliance controls, and liquidity into one settlement system.
 
 ## Key concepts
 
-- Oracle-anchored pricing: Swap rates are derived from on-chain oracle feeds, not AMM pool ratios. This gives tighter spreads and eliminates MEV.
-- Gasless swaps: Users sign an EIP-712 message. A relay service submits the transaction and pays gas. Gas cost is embedded in the swap spread.
-- Single-sided liquidity: Deposit one stablecoin (e.g. just USDC) to earn yield. No token pairing required.
-- USD Hub model: All USD stablecoins share one pool. Cross-currency swaps route through the hub via oracle rates.
+- Oracle-anchored pricing: Swap rates are derived from on-chain oracle feeds, not AMM pool ratios.
+- Gasless swaps: Users sign an off-chain message. A relay service submits the transaction and pays gas.
+- Single-sided liquidity: Deposit one stablecoin to earn yield. No token pairing required.
+- USD Hub model: USD stablecoins can share liquidity while cross-currency swaps route through the relevant pools.
 
 ## Architecture
 
@@ -26,11 +26,11 @@ BlankFX is a decentralized foreign exchange protocol on Ethereum. It enables sta
 
 ## Earning yield
 
-Deposit stablecoins into a pool to receive receipt tokens (e.g. BFX-USD). Trading fees accrue to the pool, increasing the exchange rate between receipt tokens and the underlying stablecoin. No claiming required.
+Deposit stablecoins into a pool to receive receipt tokens (e.g. `bUSDx`). Trading fees accrue to the pool, increasing the exchange rate between receipt tokens and the underlying stablecoin. No claiming required.
 
 ## Current status
 
-Live on Ethereum Sepolia (testnet). Mainnet and Base deployments planned.
+Live on Ethereum Sepolia (testnet). Mainnet and additional network deployments are planned.
 
 ## Machine-readable reference
 

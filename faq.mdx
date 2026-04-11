@@ -9,11 +9,11 @@ description: Frequently asked questions about BlankFX.
 
 <AccordionGroup>
   <Accordion title="What is BlankFX?">
-    BlankFX is an on-chain FX protocol that lets you swap between stablecoins at oracle-anchored rates. It's designed for corporates, payment platforms, and stablecoin holders who want reliable FX execution with instant settlement.
+    BlankFX is stablecoin FX infrastructure for businesses. It focuses on corridor-based settlement, tight pricing, and a clean audit trail.
   </Accordion>
 
   <Accordion title="How is BlankFX different from Uniswap?">
-    Uniswap derives swap prices from pool ratios (constant product AMM). BlankFX uses oracle feeds for FX pricing, which means tighter spreads on currency pairs, less price impact on large trades, and no MEV extraction. BlankFX is purpose-built for FX, not general-purpose token swaps.
+    Uniswap derives swap prices from pool ratios (constant product AMM). BlankFX uses oracle feeds for FX pricing, which means tighter spreads on currency pairs, less price impact on large trades, and a routing model built for FX settlement.
   </Accordion>
 
   <Accordion title="Which networks are supported?">
@@ -21,7 +21,7 @@ description: Frequently asked questions about BlankFX.
   </Accordion>
 
   <Accordion title="Do I need ETH for gas?">
-    No. BlankFX supports gasless swaps by default. You sign a message (free) and the protocol submits the transaction. The gas cost is included in the swap spread. The only exception is the first-time token approval, which requires a small amount of ETH.
+    No. BlankFX supports gasless swaps by default. You sign a message and the protocol submits the transaction. The gas cost is included in the swap spread. The only exception is the first-time token approval, which requires a small amount of ETH.
   </Accordion>
 </AccordionGroup>
 

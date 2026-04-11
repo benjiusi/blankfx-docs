@@ -1,28 +1,19 @@
 ---
 title: Swaps
-description: How FX swaps work on BlankFX — oracle pricing, routing, and gasless execution.
+description: How BlankFX swaps work - routing, pricing, and gasless execution.
 ---
 
 # Swaps
 
-## New in this release
-
-- **Pre-connect indicative rate** — see an oracle-based estimated rate before connecting your wallet, so you know what to expect before signing in
-- **Fee disclosure on quote step** — the fee is shown as `0.05% · $X.XX` before you confirm, with no surprises at settlement
-- **TradFi terminology** — the interface uses familiar foreign exchange language: "Get FX Rate", "Confirm Exchange", "Rate tolerance", and "Exchange settings" instead of DeFi jargon
-- **Gasless relay** — swap without holding ETH for gas; Permit2 + relay router handle submission on your behalf
-
----
-
 ## How pricing works
 
-BlankFX uses oracle-anchored pricing for all FX swaps. Instead of deriving the rate from pool ratios (like a standard AMM), the protocol reads the current FX rate from on-chain oracles and applies a small spread.
+BlankFX uses oracle-anchored pricing for FX swaps. Instead of deriving the rate from pool ratios, the protocol reads the current FX rate from on-chain oracles and applies a small spread.
 
 This means:
 
-- The rate you see is close to the interbank mid-rate
+- The rate you see is close to the oracle mid-rate
 - Large trades don't cause significant price impact
-- There's no MEV extraction opportunity on your trade
+- The execution path is selected for best price
 
 ## Swap types
 
@@ -54,9 +45,9 @@ Settlement is atomic — either the full swap completes or nothing happens. No p
 
 ## Gasless swaps
 
-BlankFX supports gasless execution. Instead of submitting an on-chain transaction yourself (which requires ETH for gas), you sign an off-chain message and the protocol's relay service submits it for you.
+BlankFX supports gasless execution. Instead of submitting an on-chain transaction yourself, you sign an off-chain message and the relay service submits it for you.
 
-The gas cost is built into the swap spread, so you never see a separate gas charge. From your perspective: click swap, sign message, receive tokens.
+The gas cost is built into the swap spread, so you never see a separate gas charge. From your perspective: quote, confirm, receive tokens.
 
 **Requirements for gasless swaps:**
 - One-time token approval to the Permit2 contract (this is an on-chain transaction that costs gas)

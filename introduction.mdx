@@ -1,37 +1,37 @@
 ---
 title: What is BlankFX?
-description: On-chain FX infrastructure with oracle-anchored pricing and instant settlement.
+description: Stablecoin FX infrastructure with corridor-first settlement and full traceability.
 ---
 
 # What is BlankFX?
 
-BlankFX is a foreign exchange protocol built on Ethereum. It lets you swap between stablecoins (USDC, USDT, RLUSD, EURC) at oracle-anchored rates with instant on-chain settlement.
+BlankFX is the stablecoin FX infrastructure layer for businesses that need fast settlement, tight pricing, and a clean audit trail.
 
-## How it differs from other DEXs
+## What it does
 
-Most decentralized exchanges treat currency pairs like any other token swap. You get an AMM price based on pool ratios, which drifts from real FX rates depending on liquidity depth and arbitrage speed.
+BlankFX is built for corridor-based settlement rather than generic token swapping. The focus is predictable execution, not broad DeFi trading.
 
-BlankFX anchors pricing to real-time oracle rates. The spread you see is the spread you get. No slippage surprises, no MEV extraction on your trade.
+Pricing is designed to stay tight, execution is routed for best price, and every transfer leaves a clear audit trail.
 
 ## Who it's for
 
-- **Corporate treasuries** moving funds between USD and EUR stablecoins
-- **Payment platforms** that need reliable FX execution behind their product
-- **Stablecoin holders** who want to earn yield by providing liquidity
+- **Founders and operators** moving treasury balances across corridors
+- **Web3 businesses** that need FX execution inside their product flow
+- **Ops and treasury teams** that care about control, reconciliation, and traceability
 
 ## Core concepts
 
 <CardGroup cols={2}>
-  <Card title="Swaps" icon="arrows-rotate" href="/swaps">
-    Exchange stablecoins at oracle rates. Gasless execution available.
+  <Card title="Settlement" icon="arrows-rotate" href="/swaps">
+    Execute corridor-based swaps with fast settlement and no unnecessary friction.
   </Card>
-  <Card title="Earn" icon="chart-line" href="/earn">
-    Deposit stablecoins into liquidity pools and earn from every FX trade.
+  <Card title="Liquidity" icon="chart-line" href="/earn">
+    Supply stablecoins into pools that support execution and earn from trading activity.
   </Card>
   <Card title="Fees" icon="receipt" href="/fees">
-    Transparent fee structure. No hidden costs.
+    See how pricing, spreads, and execution costs are presented.
   </Card>
   <Card title="Contracts" icon="file-contract" href="/contracts">
-    Deployed addresses and verification links.
+    Review deployed contract addresses and the current testnet footprint.
   </Card>
 </CardGroup>

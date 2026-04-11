@@ -2,23 +2,27 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "BlankFX Docs",
+  "description": "BlankFX documentation for stablecoin FX infrastructure, corridor-first settlement, and full traceability.",
   "colors": {
     "primary": "#4B9EFF",
     "light": "#4B9EFF",
-    "dark": "#2f7ddd"
+    "dark": "#2D6BF0"
   },
-  "font": {
-    "headings": {
-      "family": "DM Sans"
+  "fonts": {
+    "heading": {
+      "family": "DM Sans",
+      "weight": 700
     },
     "body": {
-      "family": "DM Sans"
+      "family": "DM Sans",
+      "weight": 400
     }
   },
-  "favicon": "https://cdn.jsdelivr.net/gh/benjiusi/blankfx-docs@main/favicon.png",
+  "favicon": "/favicon.png",
   "logo": {
-    "light": "https://cdn.jsdelivr.net/gh/benjiusi/blankfx-docs@main/logo/light.png",
-    "dark": "https://cdn.jsdelivr.net/gh/benjiusi/blankfx-docs@main/logo/dark.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://www.blankfx.org"
   },
   "navigation": {
     "tabs": [
@@ -70,13 +74,13 @@
   "navbar": {
     "links": [
       {
-        "label": "Marketing",
+        "label": "Website",
         "href": "https://blankfx.org"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Launch App",
+      "label": "Go to App",
       "href": "https://app.blankfx.org"
     }
   },
